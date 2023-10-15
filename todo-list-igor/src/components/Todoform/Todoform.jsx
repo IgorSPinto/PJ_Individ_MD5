@@ -2,16 +2,20 @@ import { useState } from 'react'
 
 import {ListPlus} from "@phosphor-icons/react";
 
+/* Componente `Todoform` para adicionar novas tarefas */
 const Todoform = ({ addTodo }) => {
     const [value, setValue] = useState("")
     const [category, setCategory] = useState("")
 
+    /* Manipulador de envio do formulário */
     const handleSubmit = (e) => {
         e.preventDefault()
         if(!value || !category) return
 
+        /* Chama a função `addTodo` passando o texto e a categoria como argumentos */
         addTodo(value, category)
 
+        /* Limpa os campos de entrada após a adição da tarefa */
         setValue("")
         setCategory("")
         

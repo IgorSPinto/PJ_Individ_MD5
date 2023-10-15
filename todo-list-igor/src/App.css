@@ -1,3 +1,4 @@
+/* Estilo global para o corpo da página */
 body {
   font-family: 'Exo', sans-serif;
   background-color: #e0e0e0;
@@ -8,6 +9,7 @@ body {
   background-size: cover;
 }
 
+/* Estilo para o contêiner principal da aplicação */
 .app{
   max-width: 600px;
   margin: 0 auto 300px;
@@ -17,24 +19,29 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilo para o título principal da aplicação */
 h1 {
   text-align: center;
   color: #0A5128;
 }
 
+/* Estilo para títulos secundários */
 h2 {
   margin-bottom: 10px;
   color: #09793f;
 }
 
+/* Estilo para parágrafos */
 p {
   margin: 10px 0;
 }
 
+/* Estilo para caixas de entrada de texto */
 input {
   box-sizing: border-box;
 }
 
+/* Estilo para botões padrão */
 button {
   background-color: #09793f;
   color: #fff;
@@ -52,6 +59,7 @@ button:hover {
   transform: scale(1.05); /* Efeito de escala suave no hover */
 }
 
+/* Estilo para a lista de tarefas */
 .todo-list {
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -59,6 +67,7 @@ button:hover {
   
 }
 
+/* Estilo para cada tarefa na lista */
 .todo {
   background-color: #e0e0e0;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -88,6 +97,7 @@ button:hover {
   border: 1px solid #0A5128; /* Borda verde mais escura */
 }
 
+/* Estilo para o formulário de adição de tarefas */
 .todo-form{
   padding-bottom: 1.5rem;
   margin-bottom: 20px;

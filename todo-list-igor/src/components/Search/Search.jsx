@@ -1,5 +1,6 @@
 import {MagnifyingGlass} from "@phosphor-icons/react";
 
+/* Componente `Search` para realizar pesquisas */
 const Search = ({search, setSearch}) => {
   return (
     <div className="search">
