@@ -1,16 +1,18 @@
 import { useState } from "react";
 import "./App.css";
 
-import Todo from "./components/Todo";
-import Todoform from "./components/Todoform";
-import Search from "./components/Search";
+import Todo from "./components/Todo/Todo";
+import Todoform from "./components/Todoform/Todoform";
+import Search from "./components/Search/Search";
+
+import {ListChecks} from "@phosphor-icons/react";
 
 function App() {
   const [todos, setTodos] = useState([
     {
       id: 1,
-      texto: "criar funcionalidade x no sistema",
-      categoria: "Trabalho",
+      texto: "Fazer projeto individual do Módulo 5",
+      categoria: "Estudos",
       completo: false,
     },
   ]);
@@ -60,7 +62,8 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Lista de Tarefas</h1>
+      <h1><ListChecks size={28} /> Lista de Tarefas</h1>
+      
       <div className="todo-list">
 
         <Search search={search} setSearch={setSearch}/>
@@ -78,6 +81,7 @@ function App() {
           <input
             type="text"
             value={editedTodoText}
+            placeholder="Edite aqui sua tarefa"
             onChange={(e) => setEditedTodoText(e.target.value)}
           />
           <button onClick={() => editTodo(editingTodoId, editedTodoText)}>Salvar</button>

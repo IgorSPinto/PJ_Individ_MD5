@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {Trash, CheckCircle, Pencil} from "@phosphor-icons/react";
+
 const Todo = ({todo, removeTodo, completeTodo, startEditingTodo}) => {
   return (
     <div className='todo' style={{textDecoration: todo.completo ? "line-through" : ""}}>
@@ -11,12 +13,12 @@ const Todo = ({todo, removeTodo, completeTodo, startEditingTodo}) => {
           </div>
           <div>
             {/* botão que irá marcar uma tarefa como concluída */}
-            <button className='complete' onClick={() => completeTodo(todo.id)}>Completar Tarefa</button>
+            <button className='complete' onClick={() => completeTodo(todo.id)}><CheckCircle size={20} /></button>
 
             {/* botão que irá deletar uma tarefa */}
-            <button className='delete' onClick={() => removeTodo(todo.id)}>Deletar Tarefa</button>
+            <button className='delete' onClick={() => removeTodo(todo.id)}><Trash size={20} /></button>
 
-            <button className='edit' onClick={() => startEditingTodo(todo.id, todo.texto)}>Editar</button>
+            <button className='edit' onClick={() => startEditingTodo(todo.id, todo.texto)}><Pencil size={20} /></button>
 
           </div>
         </div>

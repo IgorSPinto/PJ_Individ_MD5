@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import {ListPlus} from "@phosphor-icons/react";
+
 const Todoform = ({ addTodo }) => {
     const [value, setValue] = useState("")
     const [category, setCategory] = useState("")
@@ -16,7 +18,7 @@ const Todoform = ({ addTodo }) => {
     }
   return (
     <div className='todo-form'>
-        <h2>Criar Tarefa</h2>
+        <h2><ListPlus size={22} /> Criar Tarefa</h2>
         <form onSubmit={handleSubmit}>
             <input type='text' placeholder='Digite o titulo da tarefa' value={value} onChange={(e) => setValue(e.target.value)}/>
             <select value={category} onChange={(e) => setCategory(e.target.value)}>
