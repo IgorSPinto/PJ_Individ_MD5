@@ -9,21 +9,32 @@ function App() {
       id: 1,
       texto: "criar funcionalidade x no sistema",
       categoria: "Trabalho",
-      Completo: false,
+      completo: false,
     },
     {
       id: 2,
       texto: "Ir pra academia",
       categoria: "Pessoal",
-      Completo: false,
+      completo: false,
     },
     {
       id: 3,
       texto: "Estudar React",
       categoria: "Estudos",
-      Completo: false,
+      completo: false,
     },
   ]);
+
+  const addTodo = (texto, categoria) => {
+    const newTodos = [...todos, {
+      id: Math.floor(Math.random() * 10000),
+      texto,
+      categoria,
+      completo: false
+    }]
+
+    setTodos(newTodos)
+  }
 
   return (
     <div className="app">
@@ -34,7 +45,7 @@ function App() {
           <Todo key={todo.id} todo={todo} />
         ))}
       </div>
-      <Todoform />
+      <Todoform addTodo={addTodo}/>
     </div>
   );
 }
