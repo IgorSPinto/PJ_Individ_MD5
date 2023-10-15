@@ -74,6 +74,10 @@ button:hover {
   background-color: #d6605c;
 }
 
+.edit {
+  background-color: #69eaae97;
+}
+
 .todo-form{
   padding-bottom: 1.5rem;
   margin-bottom: 20px;

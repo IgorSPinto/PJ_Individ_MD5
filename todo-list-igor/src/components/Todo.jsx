@@ -16,7 +16,7 @@ const Todo = ({todo, removeTodo, completeTodo, startEditingTodo}) => {
             {/* botão que irá deletar uma tarefa */}
             <button className='delete' onClick={() => removeTodo(todo.id)}>Deletar Tarefa</button>
 
-            <button onClick={() => startEditingTodo(todo.id, todo.texto)}>Editar</button>
+            <button className='edit' onClick={() => startEditingTodo(todo.id, todo.texto)}>Editar</button>
 
           </div>
         </div>
