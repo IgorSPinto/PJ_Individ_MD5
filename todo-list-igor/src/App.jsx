@@ -13,18 +13,6 @@ function App() {
       categoria: "Trabalho",
       completo: false,
     },
-    {
-      id: 2,
-      texto: "Ir pra academia",
-      categoria: "Pessoal",
-      completo: false,
-    },
-    {
-      id: 3,
-      texto: "Estudar React",
-      categoria: "Estudos",
-      completo: false,
-    },
   ]);
 
   const [search, setSearch] = useState("")
@@ -52,6 +40,24 @@ function App() {
     setTodos(newTodos)
   }
 
+  const [editingTodoId, setEditingTodoId] = useState(null);
+  const [editedTodoText, setEditedTodoText] = useState("");
+
+  const startEditingTodo = (id, texto) => {
+    setEditingTodoId(id);
+    setEditedTodoText(texto);
+  };
+  
+  const editTodo = (id, newText) => {
+    const newTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, texto: newText } : todo
+    );
+    setTodos(newTodos);
+    setEditingTodoId(null);
+    setEditedTodoText("");
+  };
+  
+
   return (
     <div className="app">
       <h1>Lista de Tarefas</h1>
@@ -64,10 +70,21 @@ function App() {
         {/* map de array que exibe todos os objetos da todo list */}
         {todos.filter((todo) => todo.texto.toLowerCase().includes(search.toLowerCase()))
         .map((todo) => (
-          <Todo key={todo.id} todo={todo} removeTodo={removeTodo} completeTodo={completeTodo}/>
+          <Todo key={todo.id} todo={todo} removeTodo={removeTodo} completeTodo={completeTodo} startEditingTodo={startEditingTodo}/>
         ))}
+        
+        {editingTodoId && (
+        <div className="edit-todo">
+          <input
+            type="text"
+            value={editedTodoText}
+            onChange={(e) => setEditedTodoText(e.target.value)}
+          />
+          <button onClick={() => editTodo(editingTodoId, editedTodoText)}>Salvar</button>
+        </div>
+      )}
+
       </div>
-      
     </div>
   );
 }

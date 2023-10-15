@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Todo = ({todo, removeTodo, completeTodo}) => {
+const Todo = ({todo, removeTodo, completeTodo, startEditingTodo}) => {
   return (
     <div className='todo' style={{textDecoration: todo.completo ? "line-through" : ""}}>
           <div className="conteudo">
@@ -15,6 +15,9 @@ const Todo = ({todo, removeTodo, completeTodo}) => {
 
             {/* botão que irá deletar uma tarefa */}
             <button className='delete' onClick={() => removeTodo(todo.id)}>Deletar Tarefa</button>
+
+            <button onClick={() => startEditingTodo(todo.id, todo.texto)}>Editar</button>
+
           </div>
         </div>
   )
