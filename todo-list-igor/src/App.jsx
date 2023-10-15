@@ -62,7 +62,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1><ListChecks size={28} /> Lista de Tarefas</h1>
+      <h1><ListChecks size={28} /> Lista de Tarefas do Bife</h1>
       
       <div className="todo-list">
 
@@ -82,6 +82,7 @@ function App() {
             type="text"
             value={editedTodoText}
             placeholder="Edite aqui sua tarefa"
+
             onChange={(e) => setEditedTodoText(e.target.value)}
           />
           <button onClick={() => editTodo(editingTodoId, editedTodoText)}>Salvar</button>
