@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./App.css";
+
 import Todo from "./components/Todo";
 import Todoform from "./components/Todoform";
+import Search from "./components/Search";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -24,6 +26,8 @@ function App() {
       completo: false,
     },
   ]);
+
+  const [search, setSearch] = useState("")
 
   const addTodo = (texto, categoria) => {
     const newTodos = [...todos, {
@@ -52,12 +56,18 @@ function App() {
     <div className="app">
       <h1>Lista de Tarefas</h1>
       <div className="todo-list">
+
+        <Search search={search} setSearch={setSearch}/>
+
+        <Todoform addTodo={addTodo}/>
+
         {/* map de array que exibe todos os objetos da todo list */}
-        {todos.map((todo) => (
+        {todos.filter((todo) => todo.texto.toLowerCase().includes(search.toLowerCase()))
+        .map((todo) => (
           <Todo key={todo.id} todo={todo} removeTodo={removeTodo} completeTodo={completeTodo}/>
         ))}
       </div>
-      <Todoform addTodo={addTodo}/>
+      
     </div>
   );
 }
