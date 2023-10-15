@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './App.css'
 
 function App() {
   const [todos, setTodos] = useState([
@@ -39,7 +40,7 @@ function App() {
           <div>
             {/* botão que irá marcar uma tarefa como concluída */}
             <button>Completar Tarefa</button>
-            
+
             {/* botão que irá deletar uma tarefa */}
             <button>Deletar Tarefa</button>
           </div>
