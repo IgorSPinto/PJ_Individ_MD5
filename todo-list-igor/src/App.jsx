@@ -31,7 +31,7 @@ function App() {
       <div className="todo-list">
         {/* map de array que exibe todos os objetos da todo list */}
         {todos.map((todo) => (
-          <Todo todo={todo} />
+          <Todo key={todo.id} todo={todo} />
         ))}
       </div>
       <Todoform />
