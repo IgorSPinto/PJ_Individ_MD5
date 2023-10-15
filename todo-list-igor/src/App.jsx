@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Todo from './components/Todo'
 
 function App() {
   const [todos, setTodos] = useState([
@@ -30,21 +31,7 @@ function App() {
 
       {/* map de array que exibe todos os objetos da todo list */}
       {todos.map((todo) => (
-        <div className='todo'>
-          <div className="conteudo">
-            <p>{todo.texto}</p>
-            <p className="categoria">
-              ({todo.categoria})
-            </p>
-          </div>
-          <div>
-            {/* botão que irá marcar uma tarefa como concluída */}
-            <button>Completar Tarefa</button>
-
-            {/* botão que irá deletar uma tarefa */}
-            <button>Deletar Tarefa</button>
-          </div>
-        </div>
+        <Todo todo={todo}/>
       ))}
     </div>
   </div>
