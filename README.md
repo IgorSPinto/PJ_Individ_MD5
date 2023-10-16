@@ -10,6 +10,12 @@ Este é o projeto individual do Módulo 5 do curso "Códigos do Amanhã" da Resi
 Para executar o projeto em seu computador, é necessário ter o Node.js instalado. O funcionamento do projeto requer que você siga as instruções fornecidas no final deste documento.
 </p>
 
+## Funcionalidades
+![Alt text](funcionalidades.png)
+- ✅ Marque uma tarefa como concluída no primeiro ícone.
+- 🗑️ Remova uma tarefa no segundo item.
+- ✏️ Edite uma tarefa no terceiro ícone.
+
 ## Tecnologias Utilizadas 🛠️
 
 - [Node][https://nodejs.org/en/about]
@@ -22,7 +28,7 @@ Para executar o projeto em seu computador, é necessário ter o Node.js instalad
 # Clone este repositório
 $ git clone https://github.com/IgorSPinto/PJ_Individ_MD5.git
 # Acesse a pasta do projeto no terminal/cmd
-$ cd Todo-React
+$ cd PJ_Individ_MD5
 # Abra a pasta com o VS CODE
 # Instale as dependências
 $ npm install
